@@ -5,6 +5,7 @@ const form = document.querySelector("#saludar");
 const sexo = document.querySelector("#box1")
 const div = document.querySelector("#saludador");
 const edad = document.querySelector("#edad")
+const idioma = document.querySelector("#idioma")
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -15,43 +16,86 @@ form.addEventListener("submit", (event) => {
   console.log(horaActual);
 
   let saludo = "";
-  if(horaActual >= 0 & horaActual <=4)
+  if (idioma.value == "español")
   {
-    saludo = "Buenas noches";
-  }
-  if(horaActual >= 5 & horaActual <=13)
-  {
-    saludo = "Buen día";
-  }
-  if(horaActual >= 14 & horaActual <=18)
-  {
-    saludo = "Buenas tardes";
-  }
-  if(horaActual >= 19 & horaActual <=23)
-  {
-    saludo = "Buenas noches";
-  }
-
-  if (sexo.value == "masculino")
-  {
-    if (edad.value >30)
+    if(horaActual >= 0 & horaActual <=4)
     {
-      div.innerHTML = saludo + " señor " + nombre.value;
+      saludo = "Buenas noches";
+    }
+    if(horaActual >= 5 & horaActual <=13)
+    {
+      saludo = "Buen día";
+    }
+    if(horaActual >= 14 & horaActual <=18)
+    {
+      saludo = "Buenas tardes";
+    }
+    if(horaActual >= 19 & horaActual <=23)
+    {
+      saludo = "Buenas noches";
+    }
+    if (sexo.value == "masculino")
+    {
+      if (edad.value >30)
+      {
+        div.innerHTML = saludo + " señor " +  nombre.value;
+      }
+      else
+      {
+        div.innerHTML = saludo + " joven " +  nombre.value;
+      }
     }
     else
     {
-      div.innerHTML = saludo + " joven " + nombre.value;
+      if (edad.value>30)
+      {
+        div.innerHTML = saludo + " señora " +  nombre.value;
+      }
+      else
+      {
+        div.innerHTML = saludo + " jovencita " +  nombre.value;
+      }
     }
   }
   else
   {
-    if (edad.value>30)
+    if(horaActual >= 0 & horaActual <=4)
     {
-      div.innerHTML = saludo + " señora " + nombre.value;
+      saludo = "Good night";
+    }
+    if(horaActual >= 5 & horaActual <=13)
+    {
+      saludo = "Good morning";
+    }
+    if(horaActual >= 14 & horaActual <=18)
+    {
+      saludo = "Good afternoon";
+    }
+    if(horaActual >= 19 & horaActual <=23)
+    {
+      saludo = "Good evening";
+    }
+    if (sexo.value == "masculino")
+    {
+      if (edad.value >30)
+      {
+        div.innerHTML = saludo + " mister " +  nombre.value;
+      }
+      else
+      {
+        div.innerHTML = saludo + " young gentleman " +  nombre.value;
+      }
     }
     else
     {
-      div.innerHTML = saludo + " señorita " + nombre.value;
+      if (edad.value>30)
+      {
+        div.innerHTML = saludo + " ma'am " +  nombre.value;
+      }
+      else
+      {
+        div.innerHTML = saludo + " miss " +  nombre.value;
+      }
     }
   }
-});
+})
