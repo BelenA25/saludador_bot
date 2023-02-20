@@ -12,6 +12,8 @@ form.addEventListener("submit", (event) => {
   let fechaActual = new Date();
   let horaActual = fechaActual.getHours();
 
+  console.log(horaActual);
+
   saludo = "";
   if(horaActual >= 0 & horaActual <=4)
   {
