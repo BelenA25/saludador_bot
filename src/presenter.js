@@ -9,26 +9,47 @@ const edad = document.querySelector("#edad")
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
+  let fechaActual = new Date();
+  let horaActual = fechaActual.getHours();
+
+  saludo = "";
+  if(horaActual >= 0 & horaActual <=4)
+  {
+    saludo = "Buenas noches";
+  }
+  if(horaActual >= 5 & horaActual <=13)
+  {
+    saludo = "Buen día";
+  }
+  if(horaActual >= 14 & horaActual <=18)
+  {
+    saludo = "Buenas tardes";
+  }
+  if(horaActual >= 19 & horaActual <=23)
+  {
+    saludo = "Buenas noches";
+  }
+
   if (sexo.value == "masculino")
   {
     if (edad.value >30)
     {
-      div.innerHTML = "Hola señor " +  nombre.value;
+      div.innerHTML = saludo + " señor " + nombre.value;
     }
     else
     {
-      div.innerHTML = "Hola joven " +  nombre.value;
+      div.innerHTML = saludo + " joven " + nombre.value;
     }
   }
   else
   {
     if (edad.value>30)
     {
-      div.innerHTML = "Hola señora " +  nombre.value;
+      div.innerHTML = saludo + " señora " + nombre.value;
     }
     else
     {
-      div.innerHTML = "Hola señorita " +  nombre.value;
+      div.innerHTML = saludo + " señorita " + nombre.value;
     }
   }
 });
