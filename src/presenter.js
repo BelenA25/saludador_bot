@@ -14,7 +14,7 @@ form.addEventListener("submit", (event) => {
 
   console.log(horaActual);
 
-  const saludo = "";
+  let saludo = "";
   if(horaActual >= 0 & horaActual <=4)
   {
     saludo = "Buenas noches";
